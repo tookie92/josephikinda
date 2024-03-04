@@ -2,8 +2,8 @@ import React from 'react'
 import { TiThMenu as MenuIcon, TiSocialInstagram} from 'react-icons/ti'
 import { BsTiktok } from 'react-icons/bs'
 import Link from 'next/link'
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
-import { DropdownMenuSeparator } from '@radix-ui/react-dropdown-menu'
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger, DropdownMenuSeparator } from '@/components/ui/dropdown-menu'
+
 
 
 
@@ -47,6 +47,7 @@ function Navbar() {
                     <Link key={index} href={item.link}>
                       <DropdownMenuItem  className='font-medium text-monoir' key={index}>{item.name}</DropdownMenuItem>
                       <DropdownMenuSeparator/>
+
                     </Link>
                   ))}
                 </DropdownMenuContent>
