@@ -85,14 +85,7 @@ export const HoverEffect = ({
                 </div>
             </div>
             <div className="p-2 rounded-lg bg-white">
-                    {/* <Image
-                    src={Pajo}
-                    alt='rien'
-                    className={cn(
-                        "w-full h-[300px] object-cover",
-                        className
-                    )}
-                / > */}
+                  
                 {item.animation && 
                 <Lottie animationData={item.animation} /> }
             </div>

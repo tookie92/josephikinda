@@ -1,13 +1,14 @@
 import React from 'react'
 import { TiThMenu as MenuIcon, TiSocialInstagram} from 'react-icons/ti'
 import { BsTiktok } from 'react-icons/bs'
+import Link from 'next/link'
 
 
 
 const navItems = [
-  {name: "Description", link:""},
-  {name: "Projet", link:""},
-  {name: "Contact", link:""},
+  {name: "Description", link:"#second"},
+  {name: "Projet", link:"#realisation"},
+  {name: "Contact", link:"#contact"},
 ]
 const iconItems = [
   {name: TiSocialInstagram, link:""},
@@ -21,7 +22,9 @@ function Navbar() {
         <p className=' font-black text-2xl text-monoir'>Joseph Ikinda</p>
         <div className='hidden lg:flex pl-[74px] gap-x-[56px] items-center'>
           {navItems.map((item, index)=>(
-            <p className='font-medium text-monoir' key={index}>{item.name}</p>
+            <Link key={index} href={item.link}>
+              <p className='font-medium text-monoir' key={index}>{item.name}</p>
+            </Link>
           ))}
         </div>
       </div>
