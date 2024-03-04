@@ -2,6 +2,8 @@ import React from 'react'
 import { TiThMenu as MenuIcon, TiSocialInstagram} from 'react-icons/ti'
 import { BsTiktok } from 'react-icons/bs'
 import Link from 'next/link'
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
+import { DropdownMenuSeparator } from '@radix-ui/react-dropdown-menu'
 
 
 
@@ -35,7 +37,20 @@ function Navbar() {
               <item.name key={index}  className=' h-5 w-5'/>
             ))}
           </div>
-          <MenuIcon className='lg:hidden h-5 w-5'/>
+              <DropdownMenu>
+                <DropdownMenuTrigger>
+                    <MenuIcon className='lg:hidden h-5 w-5'/>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+
+                  {navItems.map((item, index)=>(
+                    <Link key={index} href={item.link}>
+                      <DropdownMenuItem  className='font-medium text-monoir' key={index}>{item.name}</DropdownMenuItem>
+                      <DropdownMenuSeparator/>
+                    </Link>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
       </div>
     </nav>
   )

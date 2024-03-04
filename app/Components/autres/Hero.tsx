@@ -1,8 +1,8 @@
 import Image from 'next/image'
-import React from 'react'
+
 import Pajo from "../../../public/papajo.jpg"
 import { Button } from '@/components/ui/button'
-import { motion } from 'framer-motion';
+
 import Link from 'next/link'
 
 
@@ -29,14 +29,16 @@ function Hero() {
             </Link>
             
         </div>
-        <motion.div className='w-full lg:w-1/2 h-[500px] '>
+        <div
+        
+        className='w-full lg:w-1/2 h-[500px] '>
           <div className='bg-white p-5'>
             <Image 
               src={Pajo}
               alt='Pajo'
             />
           </div>
-        </motion.div>
+        </div>
         
     </section>
   )
