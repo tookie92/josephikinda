@@ -17,8 +17,8 @@ const job = [
     title: "frontEndForge", 
     description:"Step into my Frontend Studio, where I craft intuitive interfaces that resonate with your audience. With attention to detail and a focus on user experience, let's build digital solutions that leave a lasting impression.",
     items:[
-      {image:"/velotrum.png", link:"https://framerspring.vercel.app/"},
-      {image:"/framerspring.png", link:"https://velotrum-vercel.vercel.app/"}
+      {image:"/framerspring.png", link:"https://framerspring.vercel.app/"},
+      {image:"/velotrum.png", link:"https://velotrum-vercel.vercel.app/"}
     ]
   },
   {
@@ -56,7 +56,7 @@ function Portofolio() {
   return (
     <section id="realisation" className=' snap-x scroll-mt-9 lg:scroll-mt-32 py-9  lg:container flex flex-col  items-center lg:items-start w-full'>
         <h1 className='text-2xl lg:text-6xl mb-14  text-white font-extrabold'>
-           Wors
+           Works
         </h1>
         {job.map((item,idx)=>(
           <div className='flex flex-col' key={idx}>

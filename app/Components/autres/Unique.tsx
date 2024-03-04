@@ -1,7 +1,7 @@
 import { Card } from '@/components/aceternity/Carte'
 import { CardContent } from '@/components/ui/card'
 import  Autoplay from 'embla-carousel-autoplay'
-import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel'
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
 import React, { useRef } from 'react'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
@@ -21,7 +21,7 @@ interface UniqueProps{
 
 function Unique({title, description, id, items}: UniqueProps) {
     const plugin = useRef(
-        Autoplay({ delay: 7000, stopOnInteraction: true })
+        Autoplay({ delay: 5000, stopOnInteraction: true })
       )
      
   return (
@@ -37,13 +37,14 @@ function Unique({title, description, id, items}: UniqueProps) {
                 }}
                 plugins={[plugin.current]}
                 
+                
             >
-                <CarouselContent className=''>
+                <CarouselContent className='-ml-2 md:-ml-4'>
                 {items && items.map((item, index) => (
-                    <CarouselItem className='flex flex-col gap-y-4 h-full w-full' key={index}>
+                    <CarouselItem className='flex  flex-col gap-y-4 h-full w-full' key={index}>
                     <div className=" bg-monvert  p-3 lg:p-5 h-full">
                         <Card className=' h-full w-full rounded-none p-0 '>
-                        <CardContent className="flex flex-col gap-y-4 relative aspect-square items-center  justify-center p-6 lg:p-0">
+                        <CardContent className=" pl-2 md:pl-4 flex flex-col gap-y-4 relative aspect-square items-center  justify-center p-6 lg:p-0">
                            
                              {(title === "frontEndForge")?
                              <>
@@ -54,7 +55,7 @@ function Unique({title, description, id, items}: UniqueProps) {
                                 alt={item.link}
                                 
                                 />
-                             <Link target='_blank' className='absolute z-10' href={item.link}>
+                             <Link  className='absolute z-10' href={item.link}>
                                 <Button>Visit the site</Button>
                              </Link>
                               
@@ -72,7 +73,7 @@ function Unique({title, description, id, items}: UniqueProps) {
                                     alt={item.link}
                                     
                                     />
-                                <Link target='_blank' className='absolute z-10' href={item.link}>
+                                <Link  className='absolute z-10' href={item.link}>
                                     <Button>watch the animation</Button>
                                 </Link>
                                 </>
@@ -90,7 +91,8 @@ function Unique({title, description, id, items}: UniqueProps) {
                 ))}
                 </CarouselContent>
 
-                <br />
+                <CarouselPrevious />
+  <CarouselNext />
                 
             </Carousel>
             </div>
