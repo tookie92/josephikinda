@@ -90,9 +90,12 @@ function Unique({title, description, id, items}: UniqueProps) {
                     </CarouselItem>
                 ))}
                 </CarouselContent>
+                <div className='flex items-center'>
 
-                <CarouselPrevious />
-            <CarouselNext />
+                    <CarouselPrevious />
+                <CarouselNext />
+                </div>
+
                 
             </Carousel>
             </div>
