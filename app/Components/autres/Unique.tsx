@@ -30,7 +30,7 @@ function Unique({title, description, id, items}: UniqueProps) {
               <h2 className=' text-white tracking-wide uppercase font-semibold text-3xl lg:text-3xl mt-10  lg:mt-0'>{title ?? "No title"}</h2>
               <p className='text-white font-medium  '>{description ?? " No descr"}</p>
             </div>
-            <div className='  lg:w-1/2 lg:h-full static  flex items-center justify-center  lg:absolute lg:top-8  lg:-right-5'>
+            <div className='  lg:w-1/2 lg:h-full static  flex items-center justify-center '>
             <Carousel className="  px-9 w-[400px] h-auto lg:w-full lg:h-full "
                 opts={{
                 loop: true
@@ -39,7 +39,7 @@ function Unique({title, description, id, items}: UniqueProps) {
                 
                 
             >
-                <CarouselContent className='-ml-2 md:-ml-4'>
+                <CarouselContent className=''>
                 {items && items.map((item, index) => (
                     <CarouselItem className='flex  flex-col gap-y-4 h-full w-full' key={index}>
                     <div className=" bg-monvert  p-3 lg:p-5 h-full">
@@ -92,7 +92,7 @@ function Unique({title, description, id, items}: UniqueProps) {
                 </CarouselContent>
 
                 <CarouselPrevious />
-  <CarouselNext />
+            <CarouselNext />
                 
             </Carousel>
             </div>
