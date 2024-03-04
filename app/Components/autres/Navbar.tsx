@@ -8,8 +8,8 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 
 
 const navItems = [
-  {name: "Description", link:"#second"},
-  {name: "Projet", link:"#realisation"},
+  {name: "Services", link:"#second"},
+  {name: "Works", link:"#realisation"},
   {name: "Contact", link:"#contact"},
 ]
 const iconItems = [
@@ -35,7 +35,7 @@ function Navbar() {
          
               <DropdownMenu>
                 <DropdownMenuTrigger>
-                    <MenuIcon className='lg:hidden h-5 w-5'/>
+                    <MenuIcon className='lg:hidden h-5 w-5 text-white'/>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
 

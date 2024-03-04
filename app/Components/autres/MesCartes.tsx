@@ -43,7 +43,7 @@ function MesCartes() {
   return (
     <section id='second' className=' scroll-mt-9 lg:scroll-mt-32 snap-start py-9  lg:container flex flex-col  items-center lg:items-start w-full '>
 
-        <h1 className=' text-2xl lg:text-6xl  text-white font-extrabold '>Mes projets</h1>
+        <h1 className=' text-2xl lg:text-6xl  text-white font-extrabold '>Services</h1>
       <HoverEffect items={projects} />
 
     </section>

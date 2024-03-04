@@ -56,7 +56,7 @@ function Portofolio() {
   return (
     <section id="realisation" className=' snap-x scroll-mt-9 lg:scroll-mt-32 py-9  lg:container flex flex-col  items-center lg:items-start w-full'>
         <h1 className='text-2xl lg:text-6xl mb-14  text-white font-extrabold'>
-            Proud to do
+           Wors
         </h1>
         {job.map((item,idx)=>(
           <div className='flex flex-col' key={idx}>
