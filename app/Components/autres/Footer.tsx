@@ -5,8 +5,8 @@ import { MdAlternateEmail } from 'react-icons/md'
 
 function Footer() {
   return (
-    <div id='contact' className=' flex bg-[#E79607] p-9 lg:p-32 items-center h-[20vh] relative mt-32 scroll-mt-9 lg:scroll-mt-32'>
-       <div className='w-full lg:w-4/5 bg-monfond h-[15vh] lg:h-[15vh] lg:absolute lg:-top-10 p-4 lg:left-28'> 
+    <div id='contact' className='  flex bg-[#E79607] p-9 lg:p-32 items-center h-[20vh] relative mt-32 scroll-mt-9 lg:scroll-mt-32'>
+       <div className='w-full  lg:w-4/5 h-[15vh] lg:h-[15vh] lg:container'> 
             <div className=' bg-[#E79607] flex-col lg:flex-row p-5 w-full h-full flex items-center gap-3 lg:gap-x-9'>
                 <h1 className='lg:text-2xl font-medium text-white'>You can find me here:</h1>
                 <div className='flex w-1/2  gap-x-3 justify-center items-start'>

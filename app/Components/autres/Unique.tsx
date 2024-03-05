@@ -21,7 +21,10 @@ interface UniqueProps{
 
 function Unique({title, description, id, items}: UniqueProps) {
     const plugin = useRef(
-        Autoplay({ delay: 5000, stopOnInteraction: true })
+        Autoplay({ delay: 7000, stopOnInteraction: true })
+      )
+    const plugins = useRef(
+        Autoplay({ delay: 10000, stopOnInteraction: true })
       )
      
   return (
@@ -35,7 +38,7 @@ function Unique({title, description, id, items}: UniqueProps) {
                 opts={{
                 loop: true
                 }}
-                plugins={[plugin.current]}
+                plugins={title === "Lottie Craft"   ? [plugins.current]: [plugin.current]}
                 
                 
             >
