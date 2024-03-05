@@ -8,12 +8,12 @@ import Footer from "./Components/autres/Footer";
 
 export default function Home() {
   return (
-    <main className=" scroll-smooth   snap-mandatory  snap-y">
+    <>
       <Navbar/>
       <Hero/>
       <MesCartes/>
       <Portofolio/>
       <Footer/>
-    </main>
+    </>
   );
 }
