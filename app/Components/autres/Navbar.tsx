@@ -32,10 +32,10 @@ function Navbar() {
       </div>
       {/* Menu handy */}
       <div className='flex gap-x-3  justify-between'>
-         
-              <DropdownMenu>
+         <div className='lg:hidden'>
+         <DropdownMenu>
                 <DropdownMenuTrigger>
-                    <MenuIcon className='lg:hidden h-5 w-5 text-white'/>
+                    <MenuIcon className=' h-5 w-5 text-white'/>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
 
@@ -48,6 +48,8 @@ function Navbar() {
                   ))}
                 </DropdownMenuContent>
               </DropdownMenu>
+         </div>
+             
       </div>
     </nav>
   )
