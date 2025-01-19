@@ -9,7 +9,6 @@ import Multi from '@/public/lottie/multi.json.json'
 import Photo from '@/public/lottie/photo.json.json'
 
 import Web from '@/public/lottie/web.json.json'
-import { div } from 'three/examples/jsm/nodes/Nodes.js'
 
 const job = [
   {
@@ -19,7 +18,8 @@ const job = [
     items:[
       {image:"/framerspring.png", link:"https://framerspring.vercel.app/"},
       {image:"/velotrum.png", link:"https://velotrum-vercel.vercel.app/"},
-      {image:"/orjfall.png", link:"https://orjfall.vercel.app/"}
+      {image:"/orjfall.png", link:"https://orjfall.vercel.app/"},
+      {image:"/Gutsy.png", link:"https://fozzo.netlify.app/"}
     ]
   },
   {

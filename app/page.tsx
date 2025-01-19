@@ -1,4 +1,3 @@
-import Image from "next/image";
 import MonCanvas from "./Components/troisd/MonCanvas";
 import Navbar from "./Components/autres/Navbar";
 import Hero from "./Components/autres/Hero";
