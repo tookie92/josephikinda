@@ -17,6 +17,8 @@ const iconItems = [
   {name: BsTiktok, link:""},
   
 ]
+
+// Rive part
 function Navbar() {
   return (
     <nav className='flex  top-0 z-50  sticky bg-[#F49F0A] items-center px-[20px] py-[16px] justify-between lg lg:mx-auto lg:container'>

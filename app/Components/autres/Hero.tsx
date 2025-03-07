@@ -20,7 +20,7 @@ function Hero() {
             </h1>
             <div className=' lg:w-2/3  leading-relaxed font-medium  text-center lg:text-start  text-white'>
                 <p>
-              {`  My name is Joseph Ikinda and I am 32 years old. I come from Sengal. I have a bachelor's degree in E-communication, I am a web designer and 3D designer`}
+              {`  My name is Joseph Ikinda and I am 33 years old. I come from Sengal. I have a bachelor's degree in E-communication, I am a web designer and 3D designer`}
                 </p>
             </div>
             <Link href={"#second"} 
