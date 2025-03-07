@@ -55,7 +55,7 @@ const job = [
 function Portofolio() {
  
   return (
-    <section id="realisation" className=' snap-x scroll-mt-9 lg:scroll-mt-32 py-9  lg:container flex flex-col  items-center lg:items-start w-full'>
+    <section id="realisation" className=' snap-x scroll-mt-9 lg:scroll-mt-32 py-9 lg:container flex flex-col  items-center lg:items-start w-full'>
         <h1 className='text-2xl lg:text-6xl mb-14  text-white font-extrabold'>
            Works
         </h1>

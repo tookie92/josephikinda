@@ -7,12 +7,12 @@ import Footer from "./Components/autres/Footer";
 
 export default function Home() {
   return (
-    <>
+    <main className="m-0 p-0 w-full mx-auto">
       <Navbar/>
       <Hero/>
       <MesCartes/>
       <Portofolio/>
       <Footer/>
-    </>
+    </main>
   );
 }

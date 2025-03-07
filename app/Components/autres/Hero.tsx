@@ -9,7 +9,7 @@ import Link from 'next/link'
 function Hero() {
   
   return (
-    <section className='lg:scroll-mt-32 snap-start scroll-mt-9 h-[90vh] lg:container flex flex-col lg:flex-row items-center  w-full '>
+    <section className='lg:scroll-mt-32 snap-start scroll-mt-9 pb-[10vh] lg:pb-0 lg:h-[90vh] lg:container flex flex-col lg:flex-row items-center  w-full '>
         <div className=' py-16 lg:py-0 w-full lg:w-1/2 px-[20px] gap-y-5 h-auto flex flex-col items-center lg:items-start'>
             <p className=' tracking-[.30em] items-center text-sm uppercase text-monvert font-medium'>
                 Illustrator & 3D designer
@@ -31,7 +31,7 @@ function Hero() {
         </div>
         <div
         
-        className='w-full lg:w-1/2 h-[500px] '>
+        className='w-full lg:w-1/2 lg:h-[500px] '>
           <div className='bg-white p-5'>
             <Image 
               src={Pajo}

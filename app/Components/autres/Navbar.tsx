@@ -1,7 +1,9 @@
+"use client"
 import React from 'react'
 import { TiThMenu as MenuIcon, TiSocialInstagram} from 'react-icons/ti'
 import { BsTiktok } from 'react-icons/bs'
 import Link from 'next/link'
+import {Alignment, Fit, Layout, useRive} from "@rive-app/react-canvas";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger, DropdownMenuSeparator } from '@/components/ui/dropdown-menu'
 
 
@@ -18,12 +20,26 @@ const iconItems = [
   
 ]
 
-// Rive part
+
 function Navbar() {
+  // Rive part
+  
+  const {rive , RiveComponent}= useRive({
+    src:"./logo.riv",
+    stateMachines: "State Machine 1",
+    artboard: "Artboard",
+    autoplay: true,
+    layout: new Layout({
+      fit: Fit.Cover,
+      alignment: Alignment.Center,
+    }),
+  })
   return (
-    <nav className='flex  top-0 z-50  sticky bg-[#F49F0A] items-center px-[20px] py-[16px] justify-between lg lg:mx-auto lg:container'>
-      <div className='flex gap-x-4'>
-        <p className=' font-black text-2xl text-white'>Joseph Ikinda</p>
+    <nav className='flex  top-0 z-50  sticky bg-[#F49F0A] items-center px-[20px]  justify-between lg lg:mx-auto lg:container'>
+      <div className=' flex gap-x-4'>
+        <div className='w-20 h-20 '>
+          <RiveComponent className='w-full h-full'/>
+        </div>
         <div className='hidden lg:flex pl-[74px] gap-x-[56px] items-center'>
           {navItems.map((item, index)=>(
             <Link key={index} href={item.link}>
