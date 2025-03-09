@@ -1,13 +1,13 @@
 "use client"
 
-import React, { useRef } from 'react'
+import React from 'react'
 import Unique from './Unique'
+// Import your JSON files
 import Calendrier from '@/public/lottie/calendrier.json.json'
 import Colier from '@/public/lottie/colier.json.json'
 import Logo from '@/public/lottie/logo.json.json'
 import Multi from '@/public/lottie/multi.json.json'
 import Photo from '@/public/lottie/photo.json.json'
-
 import Web from '@/public/lottie/web.json.json'
 
 const job = [
@@ -32,9 +32,7 @@ const job = [
       {animationData:Logo, link:"great"},
       {animationData:Multi, link:"great"},
       {animationData:Photo, link:"great"},
-      
       {animationData:Web, link:"great"},
-      
     ]
   },
   {
@@ -52,21 +50,24 @@ const job = [
   },
 ]
 
-function Portofolio() {
- 
+function Portfolio() {
   return (
-    <section id="realisation" className=' snap-x scroll-mt-9 lg:scroll-mt-32 py-9 lg:container flex flex-col  items-center lg:items-start w-full'>
-        <h1 className='text-2xl lg:text-6xl mb-14  text-white font-extrabold'>
-           Works
-        </h1>
-        {job.map((item,idx)=>(
-          <div className='flex flex-col' key={idx}>
-            <Unique items={item.items} id={item.id} key={idx} title={item.title} description={item.description}/>
-          </div>
-
-        ))}
+    <section id="realisation" className='snap-x scroll-mt-9 lg:scroll-mt-32 py-9 lg:container flex flex-col items-center lg:items-start w-full'>
+      <h1 className='text-2xl lg:text-6xl mb-14 text-white font-extrabold'>
+        Works
+      </h1>
+      {job.map((item, idx) => (
+        <div className='flex flex-col' key={idx}>
+          <Unique 
+            items={item.items} 
+            id={item.id} 
+            title={item.title} 
+            description={item.description}
+          />
+        </div>
+      ))}
     </section>
   )
 }
 
-export default Portofolio
+export default Portfolio
