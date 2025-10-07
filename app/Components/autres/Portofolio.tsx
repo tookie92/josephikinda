@@ -12,6 +12,15 @@ import Web from '@/public/lottie/web.json.json'
 
 const job = [
   {
+    id:"uxui",
+    title: "UX/UI Studio", 
+    description:"Step into my UX/UI Studio, where I craft intuitive interfaces that resonate with your audience. With attention to detail and a focus on user experience, let's build digital solutions that leave a lasting impression.",
+    items:[
+      {image:"/moyo.png", link:"https://moyo-app.vercel.app/"},
+     
+    ]
+  },
+  {
     id:"front",
     title: "frontEndForge", 
     description:"Step into my Frontend Studio, where I craft intuitive interfaces that resonate with your audience. With attention to detail and a focus on user experience, let's build digital solutions that leave a lasting impression.",
