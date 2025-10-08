@@ -73,7 +73,7 @@ function Unique({title, description, id, items}: UniqueProps) {
                 <div className="bg-monvert p-3 lg:p-5 h-full">
                   <Card className='h-full w-full rounded-none p-0'>
                     <CardContent className="pl-2 md:pl-4 flex flex-col gap-y-4 relative aspect-square items-center justify-center p-6 lg:p-0">
-                      {(title === "frontEndForge") ? (
+                      {(title === "frontEndForge" || title === "UX/UI Studio") ? (
                         <>
                           <Image className='absolute z-0'
                             objectFit='cover'
