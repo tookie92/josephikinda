@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans, Syne } from "next/font/google";
+import { Providers } from "./Providers";
 import "./globals.css";
 
 const syne = Syne({
@@ -17,7 +18,7 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "Joseph Ikinda — UI, Motion & 3D Designer",
   description:
-    "Interfaces, motion & 3D — du concept au pixel animé. Portfolio de Joseph Ikinda : UX/UI, frontend, Lottie et animation 3D.",
+    "Interfaces, motion & 3D — from concept to animated pixel. Portfolio by Joseph Ikinda: UX/UI, frontend, Lottie and 3D animation.",
 };
 
 export default function RootLayout({
@@ -26,9 +27,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className="!scroll-smooth">
+    <html lang="en" className="!scroll-smooth">
       <body className={`${syne.variable} ${dmSans.variable} bg-paper`}>
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

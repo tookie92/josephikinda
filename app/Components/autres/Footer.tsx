@@ -1,33 +1,38 @@
+"use client";
+
 import Link from "next/link";
 import { FaInstagram, FaPhoneAlt, FaTiktok } from "react-icons/fa";
 import { MdAlternateEmail } from "react-icons/md";
-
-const contacts = [
-  {
-    href: "mailto:josephikinda@gmail.com",
-    label: "Email",
-    Icon: MdAlternateEmail,
-  },
-  {
-    href: "tel:+4915228522646",
-    label: "Téléphone",
-    Icon: FaPhoneAlt,
-  },
-  {
-    href: "https://www.tiktok.com/@rehovision?lang=en",
-    label: "TikTok",
-    Icon: FaTiktok,
-    external: true,
-  },
-  {
-    href: "https://www.instagram.com/cjoli.digital/",
-    label: "Instagram",
-    Icon: FaInstagram,
-    external: true,
-  },
-];
+import { useLocale } from "@/lib/i18n/LocaleContext";
 
 function Footer() {
+  const { t } = useLocale();
+
+  const contacts = [
+    {
+      href: "mailto:josephikinda@gmail.com",
+      label: "Email",
+      Icon: MdAlternateEmail,
+    },
+    {
+      href: "tel:+4915228522646",
+      label: t.footer.phone,
+      Icon: FaPhoneAlt,
+    },
+    {
+      href: "https://www.tiktok.com/@rehovision?lang=en",
+      label: "TikTok",
+      Icon: FaTiktok,
+      external: true,
+    },
+    {
+      href: "https://www.instagram.com/cjoli.digital/",
+      label: "Instagram",
+      Icon: FaInstagram,
+      external: true,
+    },
+  ];
+
   return (
     <footer
       id="contact"
@@ -36,14 +41,13 @@ function Footer() {
       <div className="mx-auto flex max-w-[1400px] flex-col gap-10 px-5 py-20 md:px-10 md:py-28">
         <div className="max-w-3xl">
           <p className="font-sans text-xs font-medium uppercase tracking-[0.28em] text-teal">
-            Contact
+            {t.footer.eyebrow}
           </p>
           <h2 className="mt-4 font-display text-[clamp(2rem,6vw,4rem)] font-bold leading-[1.05] tracking-tight text-ink">
-            Un projet ou un poste&nbsp;? Écrivez-moi.
+            {t.footer.headline}
           </h2>
           <p className="mt-5 max-w-lg font-sans text-base leading-relaxed text-ink-muted">
-            Recruteurs et clients : un message suffit pour démarrer une
-            conversation.
+            {t.footer.body}
           </p>
         </div>
 

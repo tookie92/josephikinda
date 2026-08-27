@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import { useLocale } from "@/lib/i18n/LocaleContext";
 
 const stack = [
   "Next.js",
@@ -16,11 +17,12 @@ const stack = [
 
 function Trust() {
   const reduceMotion = useReducedMotion();
+  const { t } = useLocale();
 
   return (
     <section
       id="trust"
-      className="scroll-mt-24 border-t border-fg-light/10 bg-brand"
+      className="scroll-mt-24 border-t border-ink/10 bg-brand"
     >
       <div className="mx-auto flex max-w-[1400px] flex-col gap-10 px-5 py-16 md:flex-row md:items-end md:justify-between md:px-10 md:py-20">
         <motion.div
@@ -31,14 +33,13 @@ function Trust() {
           transition={{ duration: 0.45, ease: "easeOut" }}
         >
           <p className="font-sans text-xs font-medium uppercase tracking-[0.28em] text-cinema/70">
-            Process &amp; stack
+            {t.trust.eyebrow}
           </p>
           <h2 className="mt-3 font-display text-[clamp(1.75rem,4vw,2.75rem)] font-bold leading-tight text-cinema">
-            Brief → prototype → motion → livraison
+            {t.trust.headline}
           </h2>
           <p className="mt-4 font-sans text-base leading-relaxed text-cinema/80">
-            Disponible pour missions freelance et postes produit — remote ou
-            Allemagne / Europe.
+            {t.trust.body}
           </p>
         </motion.div>
 

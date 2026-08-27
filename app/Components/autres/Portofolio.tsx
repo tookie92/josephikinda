@@ -11,140 +11,140 @@ import Sac from "@/public/lottie/sac.json.json";
 import Jeune from "@/public/devant.json.json";
 import LeLottie from "@/public/lf30_ryktrxec.json.json";
 import TroisD from "@/public/lf30_tl2zbhxo.json.json";
-
-const chapters = [
-  {
-    id: "uxui",
-    index: "01 — UX / UI",
-    title: "UX/UI Studio",
-    description:
-      "Interfaces pensées pour être claires, mémorables et faciles à utiliser — du wireframe au pixel final.",
-    variant: "ui" as const,
-    items: [
-      {
-        image: "/moyo.png",
-        link: "https://moyo-app.vercel.app/",
-        label: "Moyo",
-        role: "UX/UI — app product design",
-      },
-    ],
-  },
-  {
-    id: "front",
-    index: "02 — Frontend",
-    title: "Frontend Forge",
-    description:
-      "Sites Next.js vivants : motion, performance et détails d’interaction qui donnent du caractère au produit.",
-    variant: "frontend" as const,
-    items: [
-      {
-        image: "/framerspring.png",
-        link: "https://framerspring.vercel.app/",
-        label: "Framer Spring",
-        role: "Frontend — motion landing",
-      },
-      {
-        image: "/velotrum.png",
-        link: "https://velotrum-vercel.vercel.app/",
-        label: "Velotrum",
-        role: "Frontend — brand site",
-      },
-      {
-        image: "/orjfall.png",
-        link: "https://orjfall.vercel.app/",
-        label: "Orjfall",
-        role: "Frontend — editorial build",
-      },
-      {
-        image: "/Gutsy.png",
-        link: "https://fozzo.netlify.app/",
-        label: "Gutsy / Fozzo",
-        role: "Frontend — product UI",
-      },
-    ],
-  },
-  {
-    id: "lottie",
-    index: "03 — Motion",
-    title: "Lottie Craft",
-    description:
-      "Micro-animations et séquences Lottie qui donnent du souffle aux interfaces — icônes, logos, moments magiques.",
-    variant: "lottie" as const,
-    items: [
-      {
-        animationData: Multi,
-        link: "#lottie",
-        label: "Multi",
-        role: "Séquence hero — Lottie",
-      },
-      { animationData: Calendrier, link: "#lottie", label: "Calendrier" },
-      { animationData: Colier, link: "#lottie", label: "Collier" },
-      { animationData: Logo, link: "#lottie", label: "Logo mark" },
-      { animationData: Photo, link: "#lottie", label: "Photo" },
-      { animationData: Web, link: "#lottie", label: "Web" },
-      { animationData: Sac, link: "#lottie", label: "Sac" },
-      { animationData: Jeune, link: "#lottie", label: "Portrait" },
-      { animationData: LeLottie, link: "#lottie", label: "Icon set" },
-      { animationData: TroisD, link: "#lottie", label: "3D feel" },
-    ],
-  },
-  {
-    id: "wonders",
-    index: "04 — 3D",
-    title: "3D WonderWorks",
-    description:
-      "Concepts en volumes et animations Blender — produits, espaces et atmosphères immersives.",
-    variant: "threeD" as const,
-    items: [
-      {
-        image: "/blender/card.jpg",
-        link: "https://www.tiktok.com/@rehovision/video/7340738028303928608?is_from_webapp=1&sender_device=pc&web_id=7338162237128885792",
-        label: "Card reveal",
-        role: "Blender — product motion",
-      },
-      {
-        image: "/blender/gloire.png",
-        link: "https://www.tiktok.com/@rehovision/video/7307963574121499936?is_from_webapp=1&sender_device=pc&web_id=7338162237128885792",
-        label: "Gloire",
-        role: "Blender — scene",
-      },
-      {
-        image: "/blender/house.png",
-        link: "https://www.tiktok.com/@rehovision/video/7297739193906728225?is_from_webapp=1&sender_device=pc&web_id=73381622371288857923",
-        label: "House",
-        role: "Blender — archviz",
-      },
-      {
-        image: "/blender/ikea.png",
-        link: "https://www.tiktok.com/@rehovision/video/7298351514207178017?is_from_webapp=1&sender_device=pc&web_id=7338162237128885792",
-        label: "IKEA study",
-        role: "Blender — product",
-      },
-      {
-        image: "/blender/mensch.jpg",
-        link: "https://www.tiktok.com/@rehovision/video/7294006047163911456?is_from_webapp=1&sender_device=pc&web_id=7338162237128885792",
-        label: "Mensch",
-        role: "Blender — character",
-      },
-      {
-        image: "/blender/ubahn.png",
-        link: "https://www.tiktok.com/@rehovision/video/7296612455390645537?is_from_webapp=1&sender_device=pc&web_id=7338162237128885792",
-        label: "U-Bahn",
-        role: "Blender — environment",
-      },
-    ],
-  },
-];
+import { useLocale } from "@/lib/i18n/LocaleContext";
 
 function Portfolio() {
+  const { t } = useLocale();
+  const { chapters: c, roles: r, lottieLabels: l } = t.works;
+
+  const chapters = [
+    {
+      id: "uxui",
+      index: c.uxui.index,
+      title: c.uxui.title,
+      description: c.uxui.description,
+      variant: "ui" as const,
+      items: [
+        {
+          image: "/moyo.png",
+          link: "https://moyo-app.vercel.app/",
+          label: "Moyo",
+          role: r.moyo,
+        },
+      ],
+    },
+    {
+      id: "front",
+      index: c.front.index,
+      title: c.front.title,
+      description: c.front.description,
+      variant: "frontend" as const,
+      items: [
+        {
+          image: "/framerspring.png",
+          link: "https://framerspring.vercel.app/",
+          label: "Framer Spring",
+          role: r.framerspring,
+        },
+        {
+          image: "/velotrum.png",
+          link: "https://velotrum-vercel.vercel.app/",
+          label: "Velotrum",
+          role: r.velotrum,
+        },
+        {
+          image: "/orjfall.png",
+          link: "https://orjfall.vercel.app/",
+          label: "Orjfall",
+          role: r.orjfall,
+        },
+        {
+          image: "/Gutsy.png",
+          link: "https://fozzo.netlify.app/",
+          label: "Gutsy / Fozzo",
+          role: r.gutsy,
+        },
+      ],
+    },
+    {
+      id: "lottie",
+      index: c.lottie.index,
+      title: c.lottie.title,
+      description: c.lottie.description,
+      variant: "lottie" as const,
+      items: [
+        {
+          animationData: Multi,
+          link: "#lottie",
+          label: "Multi",
+          role: r.multi,
+        },
+        { animationData: Calendrier, link: "#lottie", label: l.calendrier },
+        { animationData: Colier, link: "#lottie", label: l.colier },
+        { animationData: Logo, link: "#lottie", label: l.logo },
+        { animationData: Photo, link: "#lottie", label: l.photo },
+        { animationData: Web, link: "#lottie", label: l.web },
+        { animationData: Sac, link: "#lottie", label: l.sac },
+        { animationData: Jeune, link: "#lottie", label: l.jeune },
+        { animationData: LeLottie, link: "#lottie", label: l.leLottie },
+        { animationData: TroisD, link: "#lottie", label: l.troisD },
+      ],
+    },
+    {
+      id: "wonders",
+      index: c.wonders.index,
+      title: c.wonders.title,
+      description: c.wonders.description,
+      variant: "threeD" as const,
+      items: [
+        {
+          image: "/blender/card.jpg",
+          link: "https://www.tiktok.com/@rehovision/video/7340738028303928608?is_from_webapp=1&sender_device=pc&web_id=7338162237128885792",
+          label: "Card reveal",
+          role: r.card,
+        },
+        {
+          image: "/blender/gloire.png",
+          link: "https://www.tiktok.com/@rehovision/video/7307963574121499936?is_from_webapp=1&sender_device=pc&web_id=7338162237128885792",
+          label: "Gloire",
+          role: r.gloire,
+        },
+        {
+          image: "/blender/house.png",
+          link: "https://www.tiktok.com/@rehovision/video/7297739193906728225?is_from_webapp=1&sender_device=pc&web_id=73381622371288857923",
+          label: "House",
+          role: r.house,
+        },
+        {
+          image: "/blender/ikea.png",
+          link: "https://www.tiktok.com/@rehovision/video/7298351514207178017?is_from_webapp=1&sender_device=pc&web_id=7338162237128885792",
+          label: "IKEA study",
+          role: r.ikea,
+        },
+        {
+          image: "/blender/mensch.jpg",
+          link: "https://www.tiktok.com/@rehovision/video/7294006047163911456?is_from_webapp=1&sender_device=pc&web_id=7338162237128885792",
+          label: "Mensch",
+          role: r.mensch,
+        },
+        {
+          image: "/blender/ubahn.png",
+          link: "https://www.tiktok.com/@rehovision/video/7296612455390645537?is_from_webapp=1&sender_device=pc&web_id=7338162237128885792",
+          label: "U-Bahn",
+          role: r.ubahn,
+        },
+      ],
+    },
+  ];
+
   return (
     <div id="realisation" className="scroll-mt-24">
       <div className="mx-auto max-w-[1400px] px-5 pb-2 pt-20 md:px-10 md:pt-28">
         <h1 className="font-display text-[clamp(2.25rem,6vw,4.5rem)] font-bold tracking-tight text-ink">
-          Works
+          {t.works.title}
         </h1>
         <p className="mt-3 max-w-lg font-sans text-ink-muted">
-          Quatre chapitres, quatre rythmes — UI, frontend, Lottie, 3D.
+          {t.works.subtitle}
         </p>
       </div>
       {chapters.map((chapter) => (

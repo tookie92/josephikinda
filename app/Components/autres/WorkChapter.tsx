@@ -6,6 +6,7 @@ import dynamic from "next/dynamic";
 import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import type { LottieRefCurrentProps } from "lottie-react";
+import { useLocale } from "@/lib/i18n/LocaleContext";
 
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
@@ -180,6 +181,7 @@ function UiChapter({
   items,
 }: ChapterProps) {
   const reduceMotion = useReducedMotion();
+  const { t } = useLocale();
   const featured = items[0];
   if (!featured?.image) return null;
 
@@ -208,7 +210,7 @@ function UiChapter({
             <ProjectMeta
               label={featured.label}
               role={featured.role}
-              cta="Visiter le site"
+              cta={t.works.visitSite}
             />
           </ProjectLink>
         </motion.div>
@@ -226,6 +228,7 @@ function FrontendChapter({
   items,
 }: ChapterProps) {
   const reduceMotion = useReducedMotion();
+  const { t } = useLocale();
 
   return (
     <section id={id} className="scroll-mt-24 border-t border-ink/10 bg-paper">
@@ -262,7 +265,7 @@ function FrontendChapter({
               <ProjectMeta
                 label={item.label}
                 role={item.role}
-                cta="Visiter le site"
+                cta={t.works.visitSite}
               />
             </ProjectLink>
           </motion.div>
@@ -391,6 +394,7 @@ function ThreeDChapter({
   items,
 }: ChapterProps) {
   const reduceMotion = useReducedMotion();
+  const { t } = useLocale();
   const [hero, ...rest] = items;
 
   return (
@@ -434,7 +438,7 @@ function ThreeDChapter({
               <ProjectMeta
                 label={hero.label}
                 role={hero.role}
-                cta="Voir l'animation"
+                cta={t.works.watchAnimation}
                 tone="paper"
               />
             </ProjectLink>
@@ -474,7 +478,7 @@ function ThreeDChapter({
                     </p>
                   )}
                   <span className="font-sans text-xs font-semibold text-brand transition-colors duration-150 group-hover:underline">
-                    Voir →
+                    {t.works.seeMore} →
                   </span>
                 </div>
               </ProjectLink>

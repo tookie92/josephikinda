@@ -4,11 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import Pajo from "../../../public/papajo.jpg";
+import { useLocale } from "@/lib/i18n/LocaleContext";
 
 const easeOut = [0.23, 1, 0.32, 1] as const;
 
 function Hero() {
   const reduceMotion = useReducedMotion();
+  const { t } = useLocale();
 
   return (
     <section className="relative isolate flex min-h-[100svh] w-full items-end overflow-hidden bg-paper">
@@ -31,13 +33,11 @@ function Hero() {
         />
       </motion.div>
 
-      {/* Single soft brand wash — orange only, low opacity */}
       <div
         className="absolute inset-0 -z-10 bg-gradient-to-tr from-brand/18 via-transparent to-transparent"
         aria-hidden
       />
 
-      {/* One readability veil — bottom-left, face stays open top-right */}
       <div
         className="absolute inset-0 -z-10 bg-gradient-to-t from-paper from-[12%] via-paper/70 via-[45%] to-transparent to-[75%]"
         aria-hidden
@@ -57,7 +57,7 @@ function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.35, ease: easeOut, delay: 0.08 }}
           >
-            Illustrator &amp; 3D designer
+            {t.hero.eyebrow}
           </motion.p>
 
           <motion.h1
@@ -76,7 +76,7 @@ function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.35, ease: easeOut, delay: 0.22 }}
           >
-            Interfaces, motion &amp; 3D — du concept au pixel animé.
+            {t.hero.tagline}
           </motion.p>
 
           <motion.div
@@ -89,13 +89,13 @@ function Hero() {
               href="#realisation"
               className="inline-flex min-h-11 items-center justify-center bg-brand px-7 py-3 font-sans text-sm font-semibold text-ink transition-[transform,background-color] duration-150 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] hover:bg-brand-deep active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
             >
-              Voir le travail
+              {t.hero.ctaWorks}
             </Link>
             <Link
               href="#contact"
               className="inline-flex min-h-11 items-center justify-center border border-ink/30 bg-paper px-7 py-3 font-sans text-sm font-semibold text-ink transition-[transform,border-color,background-color] duration-150 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] hover:border-ink active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
             >
-              Discuter d&apos;un projet
+              {t.hero.ctaContact}
             </Link>
           </motion.div>
         </div>

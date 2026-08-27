@@ -2,7 +2,8 @@
 
 - Portfolio audiences are recruiters and clients; preferred direction is an immersive showreel (visual proof first, not CV-style hero bio).
 - Prefers step-by-step delivery: create a dedicated git branch, then implement redesign work in phases.
-- Communicates in French for product and design feedback; keep replies and UI copy aligned when collaborating.
+- Communicates in French for product and design feedback; keep chat replies aligned when collaborating.
+- Site copy defaults to English, with German and French via navbar locale switch (`lib/i18n`).
 - Prefers a light, friendlier site theme over a dark cinema-heavy look when friendliness or readability regresses.
 - LottieCraft should include the Lottie assets that previously lived in Services, without duplicate entries.
 - Frontend Forge should show more than two sites/projects.
