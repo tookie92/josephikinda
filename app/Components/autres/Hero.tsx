@@ -1,47 +1,107 @@
-import Image from 'next/image'
+"use client";
 
-import Pajo from "../../../public/papajo.jpg"
-import { Button } from '@/components/ui/button'
+import Image from "next/image";
+import Link from "next/link";
+import { motion, useReducedMotion } from "framer-motion";
+import Pajo from "../../../public/papajo.jpg";
 
-import Link from 'next/link'
-
+const easeOut = [0.23, 1, 0.32, 1] as const;
 
 function Hero() {
-  
+  const reduceMotion = useReducedMotion();
+
   return (
-    <section className='lg:scroll-mt-32 snap-start scroll-mt-9 pb-[10vh] lg:pb-0 lg:h-[90vh] lg:container flex flex-col lg:flex-row items-center  w-full '>
-        <div className=' py-16 lg:py-0 w-full lg:w-1/2 px-[20px] gap-y-5 h-auto flex flex-col items-center lg:items-start'>
-            <p className=' tracking-[.30em] items-center text-sm uppercase text-monvert font-medium'>
-                Illustrator & 3D designer
-            </p>
-            <h1 className=' uppercase text-white text-3xl lg:text-8xl font-black flex flex-col  '>
-                    <span>Joseph</span> 
-                    <span>Ikinda</span> 
-            </h1>
-            <div className=' lg:w-2/3  leading-relaxed font-medium  text-center lg:text-start  text-white'>
-                <p>
-              {`  My name is Joseph Ikinda and I am 33 years old. I come from Sengal. I have a bachelor's degree in E-communication, I am a web designer and 3D designer`}
-                </p>
-            </div>
-            <Link href={"#second"} 
+    <section className="relative isolate flex min-h-[100svh] w-full items-end overflow-hidden bg-paper">
+      <motion.div
+        className="absolute inset-0 -z-20"
+        initial={reduceMotion ? false : { scale: 1.04, opacity: 0.92 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{
+          duration: reduceMotion ? 0 : 1.2,
+          ease: easeOut,
+        }}
+      >
+        <Image
+          src={Pajo}
+          alt="Joseph Ikinda"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[center_12%] sm:object-[center_18%] contrast-[1.04]"
+        />
+      </motion.div>
+
+      {/* Single soft brand wash — orange only, low opacity */}
+      <div
+        className="absolute inset-0 -z-10 bg-gradient-to-tr from-brand/18 via-transparent to-transparent"
+        aria-hidden
+      />
+
+      {/* One readability veil — bottom-left, face stays open top-right */}
+      <div
+        className="absolute inset-0 -z-10 bg-gradient-to-t from-paper from-[12%] via-paper/70 via-[45%] to-transparent to-[75%]"
+        aria-hidden
+      />
+      <div
+        className="absolute inset-0 -z-10 bg-gradient-to-r from-paper/75 via-paper/25 to-transparent md:from-paper/70 md:via-transparent"
+        aria-hidden
+      />
+
+      <div className="grain-overlay -z-10 !opacity-[0.18]" aria-hidden />
+
+      <div className="relative z-10 mx-auto grid w-full max-w-[1400px] px-5 pb-14 pt-28 md:px-10 md:pb-20 lg:grid-cols-2 lg:pb-24">
+        <div className="flex flex-col gap-5 md:gap-6">
+          <motion.p
+            className="font-sans text-xs font-medium uppercase tracking-[0.28em] text-teal md:text-sm"
+            initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.35, ease: easeOut, delay: 0.08 }}
+          >
+            Illustrator &amp; 3D designer
+          </motion.p>
+
+          <motion.h1
+            className="font-display text-[clamp(2.75rem,10vw,6.5rem)] font-bold leading-[0.9] tracking-tight text-ink"
+            initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, ease: easeOut, delay: 0.14 }}
+          >
+            <span className="block">Joseph</span>
+            <span className="block">Ikinda</span>
+          </motion.h1>
+
+          <motion.p
+            className="max-w-md font-sans text-base leading-relaxed text-ink-muted md:text-lg"
+            initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.35, ease: easeOut, delay: 0.22 }}
+          >
+            Interfaces, motion &amp; 3D — du concept au pixel animé.
+          </motion.p>
+
+          <motion.div
+            className="flex flex-col gap-3 sm:flex-row sm:items-center"
+            initial={reduceMotion ? false : { opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.32, ease: easeOut, delay: 0.28 }}
+          >
+            <Link
+              href="#realisation"
+              className="inline-flex min-h-11 items-center justify-center bg-brand px-7 py-3 font-sans text-sm font-semibold text-ink transition-[transform,background-color] duration-150 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] hover:bg-brand-deep active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
             >
-            <Button className='w-36'>Learn More</Button>
+              Voir le travail
             </Link>
-            
+            <Link
+              href="#contact"
+              className="inline-flex min-h-11 items-center justify-center border border-ink/30 bg-paper px-7 py-3 font-sans text-sm font-semibold text-ink transition-[transform,border-color,background-color] duration-150 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] hover:border-ink active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
+            >
+              Discuter d&apos;un projet
+            </Link>
+          </motion.div>
         </div>
-        <div
-        
-        className='w-full lg:w-1/2 lg:h-[500px] '>
-          <div className='bg-white p-5'>
-            <Image 
-              src={Pajo}
-              alt='Pajo'
-            />
-          </div>
-        </div>
-        
+      </div>
     </section>
-  )
+  );
 }
 
-export default Hero
+export default Hero;
